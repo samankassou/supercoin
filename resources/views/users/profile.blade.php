@@ -1,0 +1,1 @@
+@extends('layouts.users.app', ['title' => 'Profile'])
