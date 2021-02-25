@@ -5,7 +5,7 @@
   <!-- /.col -->
    @foreach ($transactions as $transaction)
    <div class="info-box mb-3 {{ $transaction->type == 'deposit' ? 'bg-success' : 'bg-danger'}}">
-    <span class="info-box-icon"><i class="far fa-upload"></i></span>
+    <span class="info-box-icon"><i class="fas fa-exchange-alt"></i></span>
 
     <div class="info-box-content">
       <span class="info-box-text">Transaction</span>

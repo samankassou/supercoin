@@ -5,7 +5,7 @@
   <!-- /.col -->
    @foreach ($deposits as $deposit)
    <div class="info-box mb-3 bg-success">
-    <span class="info-box-icon"><i class="far fa-upload"></i></span>
+    <span class="info-box-icon"><i class="fas fa-exchange-alt"></i></span>
 
     <div class="info-box-content">
       <span class="info-box-text">Deposit</span>

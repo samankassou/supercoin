@@ -5,7 +5,7 @@
   <!-- /.col -->
    @foreach ($withdrawals as $withdrawal)
    <div class="info-box mb-3 bg-danger">
-    <span class="info-box-icon"><i class="far fa-upload"></i></span>
+    <span class="info-box-icon"><i class="far fa-exchange-alt"></i></span>
 
     <div class="info-box-content">
       <span class="info-box-text">Withdrawal</span>

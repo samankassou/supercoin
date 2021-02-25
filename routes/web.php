@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 Route::get('redirects', [HomeController::class, 'index']);
 Route::get('/admin/dashboard',[AdminController::class, 'index'])->name('admins.dashboard');
 Route::get('/admin/users',[AdminController::class, 'users'])->name('admins.users.index');
@@ -27,3 +27,19 @@ Route::get('deposits', [UserController::class, 'deposits'])->name('users.deposit
 Route::get('withdrawals', [UserController::class, 'withdrawals'])->name('users.withdrawals');
 Route::get('transactions', [UserController::class, 'transactions'])->name('users.transactions');
 Route::get('profile', [UserController::class, 'profile'])->name('users.profile');
+
+Route::get('/about_us', function(){
+    return view('about_us');
+})->name('about_us');
+Route::get('/faq', function(){
+    return view('faq');
+})->name('faq');
+Route::get('/getting_started', function(){
+    return view('getting_started');
+})->name('getting_started');
+Route::get('/refferal_program', function(){
+    return view('refferal_program');
+})->name('refferal_program');
+Route::get('/support', function(){
+    return view('support');
+})->name('support');
