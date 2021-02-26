@@ -29,7 +29,7 @@ Route::get('transactions', [UserController::class, 'transactions'])->name('users
 Route::get('profile', [UserController::class, 'profile'])->name('users.profile');
 
 Route::get('/about_us', function(){
-    return view('about_us');
+    return view('about_us', ['title' => 'About']);
 })->name('about_us');
 Route::get('/faq', function(){
     return view('faq');

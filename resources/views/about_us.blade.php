@@ -1,21 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>About | Supercoin-Trade</title>
-<link rel="icon" href="styles/images/favicon.png">
-<link rel="stylesheet" href="maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
-<link href='styles/animate.css' rel='stylesheet' type='text/css'>
-<link href='styles/custom.css' rel='stylesheet' type='text/css'>
-<link href='styles/hover.css' rel='stylesheet' type='text/css'>
-<script src="ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src='styles/setting2.js' type='text/javascript'></script>
-<script src="maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="styles/wow.js"></script>
-<script src="styles/wow.min.js"></script>
-</head>
-
+@include('partials.header')
 
 <body>
     <div id="google_translate_element"></div>
@@ -35,14 +18,7 @@
 				<div class="content">
 					<div class="logo" style="width: 233px"><a href="index.html"><img src="images/glofxlogo.png" style="width: 100%;" alt="" /></a></div>
 					<div class="navigation flipInX wow">
-						<ul>
-							<li><a href="index.html">HOME</a></li>
-							<li><a href="about_us.html">ABOUT</a></li>
-							<li><a href="faq.html">FAQ</a></li>
-							<li><a href="getting_started.html">Get Started</a></li>
-							<li><a href="referral_program.html">affiliates</a></li>
-							<li><a href="support.html">SUPPORT</a></li>
-						</ul>
+						@include('partials.nav')
 					</div>
 					<div class="loginwrap flipInX wow">
 						<ul>

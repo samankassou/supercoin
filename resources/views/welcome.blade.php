@@ -1,4 +1,4 @@
-@include('partials.header')
+@include('partials.home_header')
 
 <div class="aboutwrap" style="">
 
@@ -381,7 +381,7 @@
 </div>
 
 
-@include('partials.footer')
+@include('partials.home_footer')
 
 
  
