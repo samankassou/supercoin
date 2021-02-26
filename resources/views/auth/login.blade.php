@@ -1,50 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('partials.header', ['title' => 'Login'])
 
-<head>
+			<div class="content">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
 
-  <title>SuperCoin</title>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="{{ asset('css/login.css') }}">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<!------ Include the above in your HEAD tag ---------->
-
-<body>
-    <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="{{ route('login') }}" method="post">
-                            @csrf
-                            <h3 class="text-center text-info">Login</h3>
-                            <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
-                            </div>
-                            <div id="register-link" class="text-right">
-                                <a href="{{ asset('register') }}" class="text-info">Register here</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="bannerwrap insideheaders">
+      <div class="bannerleft">
+        <h1 class="fadeInLeft wow">Member <span>Login</span></h1>
+      </div>
     </div>
-</body>
+      </div>
+</div>
+
+</div>
+
+<div class="loginpage">
+  <div class="content">
+
+    <div class="loginwrappers">
+    <div class="icon"><img src="styles/images/logicon.png" alt="" /></div>
+      <div class="loginheads">user Login</div>
+
+                  <div class="form-container login">
+                      
+<form action="{{ route('login') }}" method="POST" name="login">
+@csrf
+<table width="100%" border=0 cellpadding=4 cellspacing=4>
+<tr>
+ <td colspan="2">
+  <div class="form-group @error('username') has-error @enderror">
+     <input type=text name="username" value="{{ old('username') }}" class=inpts size=30 autofocus="autofocus" placeholder="Username" required="">
+     <span class="help-block">@error('username') {{ $message }} @enderror</span>
+  </div>
+  </td>
+</tr><tr>
+ <td colspan="2">
+  <div class="form-group @error('password') 'has-error' @enderror">
+    <input type='password' required="" name="password" value='' class=inpts size=30 placeholder="Password">
+    <span class="help-block">@error('password') {{ $message }} @enderror</span>
+  </div></td>
+</tr>
+<tr>
+            <td height="40" valign="middle"><input type="submit" value="Login" name="submit" class=sbmt></td>
+			<td align="right" valign="middle"><a href="user_forgot_password.html">Forgot Password?</a></td>
+        </tr>
+</table>
+</form>
+
+    </div>
+    
+      <div class="loginaction">
+    <h4>Do not have an account yet? </h4>
+    <a href="{{ route('register') }}" class="signup">Register Here</a></div>
+    
+  </div>
+	</div>
+</div> 
+
+ @include('partials.footer')

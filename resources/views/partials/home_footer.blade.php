@@ -31,12 +31,12 @@
                 
                 <ul>
                     <li><a href="index.html">HOME</a></li>
-            <li><a href="about_us.html">ABOUT US</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="about_us.html">News</a></li>
-            <li><a href="support.html">SUPPORT</a></li>
-            <li> <a href="our_rules_agreement.html">TERMS</a></li>
-            <li><a href="referral_program.html">AFFILIATES</a></li>
+                    <li><a href="about_us.html">ABOUT US</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="about_us.html">News</a></li>
+                    <li><a href="support.html">SUPPORT</a></li>
+                    <li> <a href="our_rules_agreement.html">TERMS</a></li>
+                    <li><a href="referral_program.html">AFFILIATES</a></li>
                 </ul>
                 
             </div>

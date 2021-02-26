@@ -16,3 +16,33 @@
 <script src="{{ asset('templates/old/styles/wow.js') }}"></script>
 <script src="{{ asset('templates/old/styles/wow.min.js') }}"></script>
 </head>
+
+<body>
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="../translate.google.com/translate_a/elementa0d8.html?cb=googleTranslateElementInit"></script>
+<div class="wrapper">
+	 	<div class="bannaerwrapsub">
+
+			<div class="logowrap">
+
+				<div class="content">
+                    <div class="logo" style="width: 233px"><a href="{{ route('home') }}"><img src="{{ asset('templates/old/images/glofxlogo.png') }}" style="width: 100%;" alt="" /></a></div>
+					<div class="navigation flipInX wow">
+            @include('partials.nav')
+					</div>
+					<div class="loginwrap flipInX wow">
+						<ul>
+							<li class="login hvr-float-shadow"><a href="{{ route('login') }}">login</a></li>
+                <li class="signup hvr-float-shadow"><a href="{{ route('register') }}">signup</a></li>
+					</div>
+
+				</div>
+
+			</div>

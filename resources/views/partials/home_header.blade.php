@@ -38,7 +38,7 @@
 <div class="logowrap">
 
     <div class="content">
-        <div class="logo" style="width: 233px"><a href="{{ route('home') }}"><img src="images/glofxlogo.png" style="width: 100%;" alt="" /></a></div>
+        <div class="logo" style="width: 233px"><a href="{{ route('home') }}"><img src="{{ asset('templates/old/images/glofxlogo.png') }}" style="width: 100%;" alt="" /></a></div>
         <div class="navigation flipInX wow" >
             @include('partials.nav')
         </div>
