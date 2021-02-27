@@ -36,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="{{ asset('templates/dashboard/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Supercoin</span>
     </a>
@@ -58,7 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('users.dashboard') }}" class="nav-link {{ Request::routeIs('admins.dashboard') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                Dashboard
@@ -66,34 +66,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-coins"></i>
+            <a href="{{ route('admins.users.index') }}" class="nav-link {{ Request::routeIs('admins.users.index') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-               Deposit
+               Users
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-wallet"></i>
+            <a href="{{ route('admins.users.deposits') }}" class="nav-link {{ Request::routeIs('admins.users.deposits') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-               Withdrawal
+               Deposits
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+            <a href="{{ route('admins.users.withdrawals') }}" class="nav-link {{ Request::routeIs('admins.users.withdrawals') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-               Transactions
+               Withdrawals
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+            <a href="{{ route('admins.users.settings') }}" class="nav-link {{ Request::routeIs('admins.users.settings') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-cog"></i>
               <p>
-               Profile
+               Settings
               </p>
             </a>
           </li>
@@ -111,12 +111,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">{{ $title }}</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
+              <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -140,7 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2021 <a href="https://supercoin-trade.com/">Supercoin</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; {{ date('Y') }} <a href="https://supercoin-trade.com/">Supercoin</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

@@ -19,9 +19,17 @@ use App\Http\Controllers\Admin\AdminController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+
+//admins routes
 Route::get('redirects', [HomeController::class, 'index']);
 Route::get('/admin/dashboard',[AdminController::class, 'index'])->name('admins.dashboard');
 Route::get('/admin/users',[AdminController::class, 'users'])->name('admins.users.index');
+Route::get('/admin/deposits',[AdminController::class, 'deposits'])->name('admins.users.deposits');
+Route::get('/admin/withdrawals',[AdminController::class, 'withdrawals'])->name('admins.users.withdrawals');
+Route::get('/admin/settings',[AdminController::class, 'settings'])->name('admins.users.settings');
+
+//users routes
 Route::get('dashboard', [UserController::class, 'index'])->name('users.dashboard');
 Route::get('deposits', [UserController::class, 'deposits'])->name('users.deposits');
 Route::get('withdrawals', [UserController::class, 'withdrawals'])->name('users.withdrawals');
