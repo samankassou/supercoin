@@ -62,4 +62,30 @@ class AdminController extends Controller
     {
         return view('admin.users.settings');
     }
+
+    public function delete_user($user)
+    {
+
+    }
+
+    public function show(User $user)
+    {
+        $user->load('transactions');
+        return view('admin.users.show', [
+            'user' => $user
+        ]);
+    }
+
+    public function edit(User $user)
+    {
+        return view('admin.users.edit', [
+            'user' => $user
+        ]);
+    }
+
+    public function delete(User $user)
+    {
+        $user->delete();
+        return response()->json(['message' => 'user deleted!']);
+    }
 }

@@ -14,7 +14,7 @@ class UserController extends Controller
     public function transactions()
     {
         $user = User::find(auth()->user()->id);
-        $transactions = $user->transactions()->get();
+        $transactions = $user->transactions()->paginate(5);
         return view('users.transactions', [
             'transactions' => $transactions
         ]);
@@ -22,7 +22,7 @@ class UserController extends Controller
     public function deposits()
     {
         $user = User::find(auth()->user()->id);
-        $deposits = $user->transactions()->where('type', 'deposit')->get();
+        $deposits = $user->transactions()->where('type', 'deposit')->paginate(5);
         return view('users.deposits', [
             'deposits' => $deposits
         ]);
@@ -31,7 +31,7 @@ class UserController extends Controller
     public function withdrawals()
     {
         $user = User::find(auth()->user()->id);
-        $withdrawals = $user->transactions()->where('type', 'withdrawal')->get();
+        $withdrawals = $user->transactions()->where('type', 'withdrawal')->paginate(5);
         return view('users.withdrawals', [
             'withdrawals' => $withdrawals
         ]);

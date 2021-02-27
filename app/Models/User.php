@@ -47,6 +47,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($user){
+            $user->transactions()->delete();
+        });
+    }
+
     public function adminlte_profile_url()
     {
         return $this->picture;

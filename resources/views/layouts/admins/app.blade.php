@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Supercoin | {{ auth()->user()->name }}</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -66,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admins.users.index') }}" class="nav-link {{ Request::routeIs('admins.users.index') ? 'active' : '' }}">
+            <a href="{{ route('admins.users.index') }}" class="nav-link {{ Request::routeIs('admins.users.*.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-users"></i>
               <p>
                Users
