@@ -44,8 +44,8 @@
         </div>
         <div class="loginwrap flipInX wow" >
             <ul>
-                <li class="login hvr-float-shadow"><a href="user_login.php">login</a></li>
-                <li class="signup hvr-float-shadow"><a href="user_registration.php">signup</a></li>
+                <li class="login hvr-float-shadow"><a href="{{ route('login') }}">login</a></li>
+                <li class="signup hvr-float-shadow"><a href="{{ route('register') }}">signup</a></li>
             </ul>
         </div>
 

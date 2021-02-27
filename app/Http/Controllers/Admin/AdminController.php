@@ -6,11 +6,25 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use DataTables;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if($request->ajax()){
+            $data = User::all();
+
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+
+        }
         $total_users = count(User::all());
         $total_deposits = count(Transaction::where('type', 'deposit')->get());
         $total_withdrawals = count(Transaction::where('type', 'withdrawal')->get());
@@ -22,7 +36,7 @@ class AdminController extends Controller
     }
     public function users()
     {
-        $users = User::with('transactions')->latest()->get();
+        $users = User::with('transactions')->latest()->paginate(5);
         return view('admin.users.index', [
             'users' => $users
         ]);

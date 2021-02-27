@@ -58,7 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('users.dashboard') }}" class="nav-link {{ Request::routeIs('admins.dashboard') ? 'active' : '' }}">
+            <a href="{{ route('admins.dashboard') }}" class="nav-link {{ Request::routeIs('admins.dashboard') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                Dashboard
@@ -67,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <a href="{{ route('admins.users.index') }}" class="nav-link {{ Request::routeIs('admins.users.index') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                Users
               </p>
@@ -152,6 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Bootstrap 4 -->
 <script src="{{ asset('templates/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('templates/dashboars/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('templates/dashboard/dist/js/adminlte.min.js') }}"></script>
+@yield('scripts')
 </body>
 </html>
