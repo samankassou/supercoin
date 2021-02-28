@@ -67,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admins.users.index') }}" class="nav-link {{ Request::routeIs('admins.users.*.*') ? 'active' : '' }}">
+            <a href="{{ route('admins.users.index') }}" class="nav-link {{ Request::routeIs('admins.users.index') ? 'active' : '' }}">
               <i class="nav-icon fas fa-users"></i>
               <p>
                Users

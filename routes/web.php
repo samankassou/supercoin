@@ -20,23 +20,28 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 Route::middleware(['auth'])->group(function(){
-    //admins routes
-    Route::get('redirects', [HomeController::class, 'index']);
-    Route::get('/admin/dashboard',[AdminController::class, 'index'])->name('admins.dashboard');
-    Route::get('/admin/users',[AdminController::class, 'users'])->name('admins.users.index');
-    Route::get('/admin/deposits',[AdminController::class, 'deposits'])->name('admins.users.deposits');
-    Route::get('/admin/withdrawals',[AdminController::class, 'withdrawals'])->name('admins.users.withdrawals');
-    Route::get('/admin/settings',[AdminController::class, 'settings'])->name('admins.users.settings');
-    Route::post('/admin/users/delete/{user}', [AdminController::class, 'delete_user'])->name('admins.users.delete');
-    Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('admins.users.show');
-    Route::get('/admin/users/edit/{user}', [AdminController::class, 'edit'])->name('admins.users.edit');
-    Route::delete('/admin/users/delete/{user}', [AdminController::class, 'delete'])->name('admins.users.delete');
-    //users routes
-    Route::get('dashboard', [UserController::class, 'index'])->name('users.dashboard');
-    Route::get('deposits', [UserController::class, 'deposits'])->name('users.deposits');
-    Route::get('withdrawals', [UserController::class, 'withdrawals'])->name('users.withdrawals');
-    Route::get('transactions', [UserController::class, 'transactions'])->name('users.transactions');
-    Route::get('profile', [UserController::class, 'profile'])->name('users.profile');
+
+    Route::middleware(['admin'])->group(function(){
+        //admins routes
+        Route::get('redirects', [HomeController::class, 'index']);
+        Route::get('/admin/dashboard',[AdminController::class, 'index'])->name('admins.dashboard');
+        Route::get('/admin/users',[AdminController::class, 'users'])->name('admins.users.index');
+        Route::get('/admin/deposits',[AdminController::class, 'deposits'])->name('admins.users.deposits');
+        Route::get('/admin/withdrawals',[AdminController::class, 'withdrawals'])->name('admins.users.withdrawals');
+        Route::get('/admin/settings',[AdminController::class, 'settings'])->name('admins.users.settings');
+        Route::post('/admin/users/delete/{user}', [AdminController::class, 'delete_user'])->name('admins.users.delete');
+        Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('admins.users.show');
+        Route::get('/admin/users/edit/{user}', [AdminController::class, 'edit'])->name('admins.users.edit');
+        Route::delete('/admin/users/delete/{user}', [AdminController::class, 'delete'])->name('admins.users.delete');
+    });
+    Route::middleware(['user'])->group(function(){
+        //users routes
+        Route::get('dashboard', [UserController::class, 'index'])->name('users.dashboard');
+        Route::get('deposits', [UserController::class, 'deposits'])->name('users.deposits');
+        Route::get('withdrawals', [UserController::class, 'withdrawals'])->name('users.withdrawals');
+        Route::get('transactions', [UserController::class, 'transactions'])->name('users.transactions');
+        Route::get('profile', [UserController::class, 'profile'])->name('users.profile');
+    });
 });
 
 
