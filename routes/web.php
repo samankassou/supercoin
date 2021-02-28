@@ -19,11 +19,11 @@ use App\Http\Controllers\Admin\AdminController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+Route::get('redirects', [HomeController::class, 'index']);
 Route::middleware(['auth'])->group(function(){
 
     Route::middleware(['admin'])->group(function(){
         //admins routes
-        Route::get('redirects', [HomeController::class, 'index']);
         Route::get('/admin/dashboard',[AdminController::class, 'index'])->name('admins.dashboard');
         Route::get('/admin/users',[AdminController::class, 'users'])->name('admins.users.index');
         Route::get('/admin/deposits',[AdminController::class, 'deposits'])->name('admins.users.deposits');
@@ -45,7 +45,7 @@ Route::middleware(['auth'])->group(function(){
 });
 
 
-
+//guest routes
 Route::get('/about_us', function(){
     return view('about_us', ['title' => 'About']);
 })->name('about_us');

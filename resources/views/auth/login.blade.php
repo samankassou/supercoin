@@ -22,26 +22,26 @@
 
                   <div class="form-container login">
                       
-<form action="{{ route('login') }}" method="POST" name="login">
+<form action="{{ route('login') }}" method="POST">
 @csrf
 <table width="100%" border=0 cellpadding=4 cellspacing=4>
 <tr>
  <td colspan="2">
   <div class="form-group @error('username') has-error @enderror">
-     <input type=text name="username" value="{{ old('username') }}" class=inpts size=30 autofocus="autofocus" placeholder="Username" required="">
+     <input type=text name="username" value="{{ old('username') }}" class=inpts size=30 autofocus="autofocus" placeholder="Username">
      <span class="help-block">@error('username') {{ $message }} @enderror</span>
   </div>
   </td>
 </tr><tr>
  <td colspan="2">
   <div class="form-group @error('password') 'has-error' @enderror">
-    <input type='password' required="" name="password" value='' class=inpts size=30 placeholder="Password">
+    <input type='password' required="" name="password" class=inpts size=30 placeholder="Password">
     <span class="help-block">@error('password') {{ $message }} @enderror</span>
   </div></td>
 </tr>
 <tr>
-            <td height="40" valign="middle"><input type="submit" value="Login" name="submit" class=sbmt></td>
-			<td align="right" valign="middle"><a href="user_forgot_password.html">Forgot Password?</a></td>
+      <td height="40" valign="middle"><input type="submit" value="Login" name="submit" class=sbmt></td>
+			<td align="right" valign="middle"><a href="{{ route('password.reset') }}">Forgot Password?</a></td>
         </tr>
 </table>
 </form>

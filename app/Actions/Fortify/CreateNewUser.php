@@ -29,11 +29,27 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
+            'username' => [
+                'required',
+                'unique:users,username'
+            ],
+            'btc_wallet' => [
+                'required'
+            ],
+            'agree' => [
+                'required'
+            ],
+            'country' => [
+                'required'
+            ],
             'password' => $this->passwordRules(),
         ])->validate();
 
         return User::create([
             'name' => $input['name'],
+            'username' => $input['username'],
+            'btc_wallet' => $input['btc_wallet'],
+            'country' => $input['country'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
