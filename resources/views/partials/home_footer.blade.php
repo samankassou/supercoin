@@ -26,17 +26,17 @@
           <div class="content">
               
               
-               <div class="copyright">&copy; Copyright 2017. supercoin-trade  All Rights Reserved</div>
+               <div class="copyright">&copy; Copyright 2017 - {{ date('Y') }}. supercoin-trade  All Rights Reserved</div>
             <div class="footerlinks">
                 
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about_us.html">ABOUT US</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="about_us.html">News</a></li>
-                    <li><a href="support.html">SUPPORT</a></li>
-                    <li> <a href="our_rules_agreement.html">TERMS</a></li>
-                    <li><a href="referral_program.html">AFFILIATES</a></li>
+                  <li><a href="{{ route('home') }}">HOME</a></li>
+                  <li><a href="{{ route('about_us') }}">ABOUT US</a></li>
+                  <li><a href="{{ route('faq') }}">FAQ</a></li>
+                  <li><a href="{{ route('about_us') }}">News</a></li>
+                  <li><a href="{{ route('support') }}">SUPPORT</a></li>
+                  <li><a href="{{ route('our_rules_agreement') }}">TERMS</a></li>
+                  <li><a href="{{ route('refferal_program') }}">AFFILIATES</a></li>
                 </ul>
                 
             </div>

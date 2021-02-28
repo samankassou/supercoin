@@ -61,3 +61,6 @@ Route::get('/refferal_program', function(){
 Route::get('/support', function(){
     return view('support');
 })->name('support');
+Route::get('/our_rules_agreement', function(){
+    return view('our_rules_agreement');
+})->name('our_rules_agreement');

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to Supercoin-Trade</title>
     <link rel="icon" href="{{ asset('templates/old/styles/images/favicon.png') }}">
-    <link rel="stylesheet" href="maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('templates/old/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
     <link href="{{ asset('templates/old/styles/animate.css') }}" rel='stylesheet' type='text/css'>
     <link href="{{ asset('templates/old/styles/custom.css') }}" rel='stylesheet' type='text/css'>
@@ -22,7 +22,6 @@
 
 
 <body>
-    <div class="container">
     <div id="google_translate_element"></div>
 
     <script type="text/javascript">
