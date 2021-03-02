@@ -28,7 +28,7 @@
       <h2 class="zoomIn wow" style="text-align:center;">Our <span>Investment</span> plans</h2>
       <div class="planitems">
         <div class="planbox one flipInY wow">
-		<div class="plantop"><img src="styles/images/plan1.png" alt="" />25%</div>
+		<div class="plantop"><img src="{{ asset('templates/old/styles/images/plan1.png') }}" alt="" />25%</div>
           <div class="planheader">
             <div class="planname">STARTER PLAN  </div>
 			<div class="planname">FOR 24 HOURS</div>
@@ -42,7 +42,7 @@
           </div>
         </div>
             <div class="planbox two flipInY wow">
-		<div class="plantop"><img src="styles/images/plan2.png" alt="" />50%</div>	
+		<div class="plantop"><img src="{{ asset('templates/old/styles/images/plan2.png') }}" alt="" />50%</div>	
           <div class="planheader">
             <div class="planname">ADVANCED PLAN</div>
 			<div class="planname">FOR 48 HOURS</div>
@@ -56,7 +56,7 @@
           </div>
         </div>
            <div class="planbox three flipInY wow">
-		<div class="plantop"><img src="styles/images/plan3.png" alt="" />120%</div>	
+		<div class="plantop"><img src="{{ asset('templates/old/styles/images/plan3.png') }}" alt="" />120%</div>	
           <div class="planheader">
             <div class="planname">PRO PLAN</div>
 			<div class="planname">FOR 72 HOURS</div>
@@ -70,7 +70,7 @@
           </div>
         </div>
            <div class="planbox four flipInY wow">
-		<div class="plantop"><img src="styles/images/plan4.png" alt="" />200%</div>	
+		<div class="plantop"><img src="{{ asset('templates/old/styles/images/plan4.png') }}" alt="" />200%</div>	
           <div class="planheader">
             <div class="planname">VIP PLAN </div>
 			<div class="planname">FOR 24 HOURS </div>
@@ -130,7 +130,7 @@
 				<h3>Open an account</h3>
 				<p>To open an account, simply click on the &quot;Register New Account&quot; button on the main page. The next page is the registration form that you need to fill out. This shouldn&rsquo;t take more than a few minutes. Once you&rsquo;ve done that, you&rsquo;ll receive an email  from us, and you&rsquo;re done. You are now an official member of our site!</p>
 			</div>
-			<span class="icon"><img src="styles/images/howto1.png" alt="" /></span>
+			<span class="icon"><img src="{{ asset('templates/old/styles/images/howto1.png') }}" alt="" /></span>
           
         </div>
         <div class="featurebox featurebox2 two fadeInUp wow hvr-float-shadow">
@@ -139,7 +139,7 @@
 				 <h3>LOGIN TO MEMBER'S AREA</h3>
 				<p>Once you&rsquo;ve opened an account, the next thing would be to familiarize yourself with how different sections of your account works. To start, go to the login page and enter your registration username and chosen password. After you are logged in, you can explore your account and get a feel of how everything works, such as making deposits, requesting withdrawals, etc.</p>
 			</div>	
-			<span class="icon"><img src="styles/images/howto2.png" alt="" /></span>
+			<span class="icon"><img src="{{ asset('templates/old/styles/images/howto2.png') }}" alt="" /></span>
 		
 
         </div>
@@ -149,7 +149,7 @@
 				<p>To start growing your Capital, you need to make a deposit. You can do this from the deposit section of your account. There are investment plans ranging from hourly profit depending on the amount of your deposit. The minimum deposit amount is $20, and you are allowed to make as many deposits as you want. </p>
 			</div>	
           
-          <span class="icon"><img src="styles/images/howto3.png" alt="" /></span>
+          <span class="icon"><img src="{{ asset('templates/old/styles/images/howto3.png') }}" alt="" /></span>
           
         </div>
         <div class="featurebox featurebox2 four fadeInUp wow hvr-float-shadow">
@@ -159,7 +159,7 @@
 					<h3>WATCH YOUR CAPITAL GROW</h3>
 					<p>After you have made a deposit, there is nothing else to do except watch your earnings grow in your account every Hour . This can be fun, because it means you can be anywhere you want to be in the world, and your funds will still be growing in your account every hour , even without you doing anything!</p>
 				</div>
-          				<span class="icon"><img src="styles/images/howto4.png" alt="" /></span>
+          				<span class="icon"><img src="{{ asset('templates/old/styles/images/howto4.png') }}" alt="" /></span>
           
         </div>
         <div class="featurebox five fadeInDown wow hvr-float-shadow"> 

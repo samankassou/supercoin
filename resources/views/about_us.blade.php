@@ -74,13 +74,13 @@ About <span>us</span></h1>
 		      <h2 class="zoomIn wow"><span>supercoin-trade</span> Features</h2>
 		
 		<div class="feature">
-				<img src="styles/images/feat1.png" alt="" />
+				<img src="{{ asset('templates/old/styles/images/feat1.png') }}" alt="" />
 				<h1>24/7 Customer Support</h1>
 				<p>We provide 24/7 customer support through e-mail. Our support representatives are always available to answer any questions.</p>
 		</div>
 		
 		<div class="feature">
-				<img src="styles/images/feat2.png" alt="" />
+				<img src="{{ asset('templates/old/styles/images/feat2.png') }}" alt="" />
 				<h1>Dedicated Server</h1>
 				<p>We use a dedicated server with the highest level of DDOS protection to ensure that your funds are always safe with us.</p>
 		</div>
@@ -88,28 +88,28 @@ About <span>us</span></h1>
 
 
 		<div class="feature">
-				<img src="styles/images/feat3.png" alt="" />
+				<img src="{{ asset('templates/old/styles/images/feat3.png') }}" alt="" />
 				<h1>ev ssl</h1>
 				<p>Our website is secured with 256-bit encryption from Comodo with Extended Validation that verifies the authenticity of our company.</p>
 		</div>
 
 
 		<div class="feature">
-				<img src="styles/images/feat4.png" alt="" />
+				<img src="{{ asset('templates/old/styles/images/feat4.png') }}" alt="" />
 				<h1>uk registered company</h1>
 				<p>Our company is legally registered in the UK as &ldquo;supercoin-trade".</p>
 		</div>
 
 
 		<div class="feature">
-				<img src="styles/images/feat5.png" alt="" />
+				<img src="{{ asset('templates/old/styles/images/feat5.png') }}" alt="" />
 				<h1>instant withdrawals</h1>
 				<p>Our withdrawals are all processed instantly after they are requested . Minimum withdrawal is 0.001&#579 and 0.01 For Perfectmoney ,Payeer.</p>
 		</div>
 
 
 		<div class="feature">
-				<img src="styles/images/feat6.png" alt="" />
+				<img src="{{ asset('templates/old/styles/images/feat6.png') }}" alt="" />
 				<h1>ddos protected system</h1>
 				<p>We use the highest level of protection . Our website can resists attacks of any size.</p>
 		</div>

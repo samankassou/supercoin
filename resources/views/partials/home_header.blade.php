@@ -12,6 +12,7 @@
     <link href="{{ asset('templates/old/styles/animate.css') }}" rel='stylesheet' type='text/css'>
     <link href="{{ asset('templates/old/styles/custom.css') }}" rel='stylesheet' type='text/css'>
     <link href="{{ asset('templates/old/styles/hover.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('css/app.css') }}" rel='stylesheet' type='text/css'>
     <!--<script src="ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
     <script src="{{ asset('templates/old/js/jquery-1.8.3.min.js') }}"></script>
     <script src="{{ asset('templates/old/styles/setting2.js') }}" type='text/javascript'></script>

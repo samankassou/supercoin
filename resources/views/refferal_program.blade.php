@@ -54,7 +54,7 @@ Referral <span>Program</span></h1>
 		</div>
 		
 		
-		<div class="payments"><img src="styles/images/payments.png" alt="" /></div>
+		<div class="payments"><img src="{{ asset('templates/old/styles/images/payments.png') }}" alt="" /></div>
 
 
 	</div>
