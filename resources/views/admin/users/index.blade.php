@@ -1,79 +1,47 @@
 @extends('layouts.admins.app', ['title' => 'Users'])
+@section('styles')
+<link rel="stylesheet" href="{{ asset('templates/dashboard/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('templates/dashboard/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+@endsection
 @section('content')
-    <!-- Small boxes (Stat box) -->
-<div class="row">
-    <table class="table table-striped data-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th width="100px">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-                <tr id="{{ $user->id }}">
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->username }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td class="d-flex">
-                        <a href="{{ route('admins.users.show', $user->id) }}" class="view btn btn-primary btn-xs"><i class="fas fa-eye"></i></a>
-                        <a href="{{ route('admins.users.edit', $user->id) }}" class="edit btn btn-warning btn-xs"><i class="fas fa-pen"></i></a>
-                        <button href="" onclick="deleteUser({{ $user->id }})" class="edit btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-    {{ $users->links() }}
- </div>
-    <!-- /.row -->
+<div class="panel">
+    <div class="panel-heading d-flex justify-content-end align-items-center mb-4">
+        <button class="btn btn-success">
+            <i class="fas fa-plus"></i> 
+            Add User
+        </i>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th width="160px">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+        </div>
+     </div>
+</div>
 @endsection
 @section('scripts')
+<script src="{{ asset('templates/dashboard/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('templates/dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('templates/dashboard/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script type="text/javascript">
-    function deleteUser(id)
-    {
-        $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-        });
-        $.ajax(
-            {
-                url: "users/delete/"+id,
-                type: 'delete', // replaced from put
-                dataType: "JSON",
-                data: {
-                    "id": id // method and token not needed in data
-                },
-                success: function (response)
-                {
-                    //$('.alert').removeClass('hide');
-                    
-                    
-                    $("#"+id).fadeOut(500);
-                    console.log(response); // see the reponse sent
-
-                    // Swal.fire(
-                    // 'Remind!',
-                    // 'Company deleted successfully!',
-                    // 'success'
-                    // )
-                },
-                error: function(xhr) {
-                console.log(xhr.responseText); // this line will save you tons of hours while debugging
-                // do something here because of error
-            }
-        });
-    }
 
     $(function () {
       
       var table = $('.data-table').DataTable({
           processing: true,
           serverSide: true,
-          ajax: "{{ route('admins.users.index') }}",
+          ajax: "{{ route('admins.users.list') }}",
           columns: [
               {data: 'name', name: 'name'},
               {data: 'username', name: 'username'},

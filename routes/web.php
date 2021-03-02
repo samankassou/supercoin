@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('admins.users.show');
         Route::get('/admin/users/edit/{user}', [AdminController::class, 'edit'])->name('admins.users.edit');
         Route::delete('/admin/users/delete/{user}', [AdminController::class, 'delete'])->name('admins.users.delete');
+        Route::get('/admin/users/list', [AdminController::class, 'getUsers'])->name('admins.users.list');
     });
     Route::middleware(['user'])->group(function(){
         //users routes

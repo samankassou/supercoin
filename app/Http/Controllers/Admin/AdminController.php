@@ -12,19 +12,6 @@ class AdminController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->ajax()){
-            $data = User::all();
-
-            return Datatables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($row){
-                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-
-        }
         $total_users = count(User::all());
         $total_deposits = count(Transaction::where('type', 'deposit')->get());
         $total_withdrawals = count(Transaction::where('type', 'withdrawal')->get());
@@ -33,6 +20,19 @@ class AdminController extends Controller
             'total_deposits' => $total_deposits,
             'total_withdrawals' => $total_withdrawals
         ]);
+    }
+    public function getUsers()
+    {
+        $data = User::all();
+
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="show btn btn-primary btn-sm"><i class="fas fa-eye"></i></a> <a href="javascript:void(0)" class="edit btn btn-success btn-sm"><i class="fas fa-pen"></i></a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
     }
     public function users()
     {
