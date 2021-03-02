@@ -14,7 +14,8 @@ class UserController extends Controller
     public function transactions()
     {
         $user = User::find(auth()->user()->id);
-        $transactions = $user->transactions()->paginate(5);
+        $transactions = $user->transactions()->latest()->paginate(5);
+        //dd($transactions);
         return view('users.transactions', [
             'transactions' => $transactions
         ]);

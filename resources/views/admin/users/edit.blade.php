@@ -1,7 +1,7 @@
 @extends('layouts.admins.app', ['title' => 'Edit User'])
 @section('content')
     <!-- Small boxes (Stat box) -->
-<div class="row">
+<div class="row justify-content-center">
     <div class="card card-primary">
         <div class="card-header">
           <h3 class="card-title cc_cursor">Quick Example</h3>

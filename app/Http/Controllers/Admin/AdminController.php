@@ -21,6 +21,11 @@ class AdminController extends Controller
             'total_withdrawals' => $total_withdrawals
         ]);
     }
+
+    public function create()
+    {
+
+    }
     public function getUsers()
     {
         $data = User::all();
@@ -28,7 +33,7 @@ class AdminController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="javascript:void(0)" class="show btn btn-primary btn-sm"><i class="fas fa-eye"></i></a> <a href="javascript:void(0)" class="edit btn btn-success btn-sm"><i class="fas fa-pen"></i></a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>';
+                    $actionBtn = '<a href="/admin/users/show/'.$row->id.'" class="show btn btn-primary btn-sm"><i class="fas fa-eye"></i></a> <a href="/admin/users/edit/'.$row->id.'" class="edit btn btn-success btn-sm"><i class="fas fa-pen"></i></a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])

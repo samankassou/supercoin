@@ -9,8 +9,22 @@
       <span class="info-box-icon"><i class="fas fa-exchange-alt"></i></span>
   
       <div class="info-box-content">
-        <span class="info-box-text">{{ $transaction->type === 'deposit'? 'Deposit': 'Withdrawal' }}</span>
-        <span class="info-box-number">$ {{ $transaction->amount }}</span>
+        <div class="row justify-content-between">
+          <span class="info-box-text">
+            {{ $transaction->type === 'deposit'? 'Deposit': 'Withdrawal' }}
+          </span>
+          <span class="text-sm">{{ $transaction->created_at->format('d M Y, H:i:s') }}</span>
+        </div>
+        <div class="row justify-content-between">
+          <span class="info-box-number">$ {{ $transaction->amount }}</span>
+          <span class="info-box-text">{{ $transaction->status }}</span>
+        </div>
+        @if ($transaction->status === "processing")
+            <div class="row justify-content-end">
+              <a class="btn btn-danger btn-xs" href="#">Cancel</a>
+            </div>
+        @endif
+        
       </div>
       <!-- /.info-box-content -->
     </div>

@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function(){
         //admins routes
         Route::get('/admin/dashboard',[AdminController::class, 'index'])->name('admins.dashboard');
         Route::get('/admin/users',[AdminController::class, 'users'])->name('admins.users.index');
+        Route::get('/admin/users/create',[AdminController::class, 'create'])->name('admins.users.create');
         Route::get('/admin/deposits',[AdminController::class, 'deposits'])->name('admins.users.deposits');
         Route::get('/admin/withdrawals',[AdminController::class, 'withdrawals'])->name('admins.users.withdrawals');
         Route::get('/admin/settings',[AdminController::class, 'settings'])->name('admins.users.settings');
