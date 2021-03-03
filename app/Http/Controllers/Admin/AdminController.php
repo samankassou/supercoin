@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
