@@ -30,10 +30,9 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/admin/deposits',[AdminController::class, 'deposits'])->name('admins.users.deposits');
         Route::get('/admin/withdrawals',[AdminController::class, 'withdrawals'])->name('admins.users.withdrawals');
         Route::get('/admin/settings',[AdminController::class, 'settings'])->name('admins.users.settings');
-        Route::post('/admin/users/delete/{user}', [AdminController::class, 'delete_user'])->name('admins.users.delete');
         Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('admins.users.show');
         Route::get('/admin/users/edit/{user}', [AdminController::class, 'edit'])->name('admins.users.edit');
-        Route::delete('/admin/users/delete/{user}', [AdminController::class, 'delete'])->name('admins.users.delete');
+        Route::delete('/admin/users/destroy/{user}', [AdminController::class, 'delete'])->name('admins.users.destroy');
         Route::get('/admin/users/list', [AdminController::class, 'getUsers'])->name('admins.users.list');
     });
     Route::middleware(['user'])->group(function(){

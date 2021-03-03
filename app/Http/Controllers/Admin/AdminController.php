@@ -34,7 +34,7 @@ class AdminController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="/admin/users/show/'.$row->id.'" class="show btn btn-primary btn-sm"><i class="fas fa-eye"></i></a> <a href="/admin/users/edit/'.$row->id.'" class="edit btn btn-success btn-sm"><i class="fas fa-pen"></i></a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>';
+                    $actionBtn = '<a href="/admin/users/show/'.$row->id.'" class="show btn btn-primary btn-sm"><i class="fas fa-eye"></i></a> <a href="/admin/users/edit/'.$row->id.'" class="edit btn btn-success btn-sm"><i class="fas fa-pen"></i></a> <button href="javascript:void(0)" onclick="deleteUser('.$row->id.')" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -69,11 +69,6 @@ class AdminController extends Controller
         return view('admin.users.settings');
     }
 
-    public function delete_user($user)
-    {
-
-    }
-
     public function show(User $user)
     {
         $user->load('transactions');
@@ -89,9 +84,9 @@ class AdminController extends Controller
         ]);
     }
 
-    public function delete(User $user)
+    public function destroy(User $user)
     {
         $user->delete();
-        return response()->json(['message' => 'user deleted!']);
+        return response()->json(['message' => ' user deleted!']);
     }
 }
